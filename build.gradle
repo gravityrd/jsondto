@@ -1,0 +1,40 @@
+plugins {
+  id 'java'
+  id 'maven-publish'
+}
+
+group = "com.gravityrd"
+description = """webshop data"""
+version = '1.0'
+
+compileJava.options.encoding = 'UTF-8'
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+tasks.withType(JavaCompile) { options.incremental = true }
+
+repositories { 
+        jcenter() 
+        mavenCentral()
+}
+dependencies {
+   compile 'com.fasterxml.jackson.core:jackson-databind:2.6.0'
+}
+
+project.task('sourceJar', group: 'gravity', type: Jar) {
+    from project.sourceSets.main.allSource
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from project.components.java
+            artifact project.sourceJar {
+                classifier "webshop-data"
+            }
+        }
+    }
+}
+
+task wrapper(type: Wrapper) {
+    distributionUrl = "http://services.gradle.org/distributions/gradle-2.5-all.zip"
+}
