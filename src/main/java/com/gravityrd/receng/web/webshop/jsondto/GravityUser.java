@@ -2,7 +2,6 @@ package com.gravityrd.receng.web.webshop.jsondto;
 
 /**
  * A user in the recommendation system. A user is an entity which generates event, and can get recommendations.
- * @see com.gravityrd.recenginterface.webshop.User
  */
 public class GravityUser {
 
@@ -25,7 +24,7 @@ public class GravityUser {
 	 *
 	 * The recommendation engine in most cases does not require detailed information about the users, usually only some basic information can be used to enhance the quality of recommendation.
 	 * For example:
-	 * <table border="1">
+	 * <table border="1" summary="parameters">
 	 *	<tr><th>Name</th><th>Description</th></tr>
 	 *	<tr><td>ZipCode</td><td>The zip code of the user.</td></tr>
 	 *	<tr><td>City</td><td>The city of the user.</td></tr>

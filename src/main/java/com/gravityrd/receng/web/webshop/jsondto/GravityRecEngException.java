@@ -10,7 +10,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * for example null value where not allowed, or referencing a user identifier which was not created previously.</p>
  * <p>It can also indicate an internal error in the recommendation engine, in this case the details of the error can be found in the log files of the recommendation engine.</p>
  * <p>The message of the exception contains a human readable description of the problem.</p>
- * @see com.gravityrd.recenginterface.webshop.RecEngException
  */
 public class GravityRecEngException extends Exception {
 	@JsonProperty("faultInfo")

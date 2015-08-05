@@ -5,7 +5,6 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize.Inclusion;
 
 /**
  * The list of items recommended to a user.
- * @see com.gravityrd.recenginterface.webshop.ItemRecommendation
  */
 public class GravityItemRecommendation {
 

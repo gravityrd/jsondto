@@ -4,7 +4,6 @@ import java.util.HashMap;
 
 /**
  * The context of recommendation.
- * @see com.gravityrd.recenginterface.webshop.RecommendationContext
  */
 public class GravityRecommendationContext {
 
@@ -34,7 +33,7 @@ public class GravityRecommendationContext {
 	 * The list of allowed names depends on the actual scenario.
 	 * <p>The scenario can also specify that the result is not a list of items, but a list of values of item NameValues.</p>
 
-	 * <table border="1">
+	 * <table border="1"  summary="parameters">
 	 *	<tr><th>Name</th><th>Description</th></tr>
 	 *	<tr><td>CurrentItemId</td><td>The identifier of the actual item, if the current page is an item page.</td></tr>
 	 *	<tr><td>ItemOnPage</td><td>Identifier of item displayed elsewhere on the page. They will be excluded from recommendation. This namevalue can be used multiple times to provide a list of items.</td></tr>

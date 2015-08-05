@@ -2,7 +2,6 @@ package com.gravityrd.receng.web.webshop.jsondto;
 
 /**
  * An item is something that can be recommended to users.
- * @see com.gravityrd.recenginterface.webshop.Item
  */
 public class GravityItem {
 
@@ -58,7 +57,7 @@ public class GravityItem {
 	 * <p>The order of NameValues among different names will not be preserved, but the order of the values for the same name will be preserved.</p>
 	 * <p>The recommendation engine can be configured to use some properties to create a relation between items.</p>
 	 * <p>A possible list of names:</p>
-	 * <table border="1">
+	 * <table summary="parameters" border="1">
 	 *	<tr><th>Name</th><th>Localizable</th><th>Description</th></tr>
 	 *	<tr><td>Title</td><td>Yes</td><td>The title of the item.</td></tr>
 	 *	<tr><td>Description</td><td>Yes</td><td>The description of item.</td></tr>
