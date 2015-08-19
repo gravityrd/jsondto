@@ -39,6 +39,10 @@ task javadocJar(type: Jar) {
     from javadoc
 }
 
+task javadoc(type: Javadoc) {
+  source = sourceSets.main.allJava
+}
+
 artifacts {
     archives javadocJar, sourcesJar, jar
 }
