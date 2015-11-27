@@ -1,5 +1,7 @@
 package com.gravityrd.receng.web.webshop.jsondto;
 
+import java.util.Arrays;
+
 /**
  * An item is something that can be recommended to users.
  */
@@ -80,5 +82,18 @@ public class GravityItem {
 	 *
 	 */
 	public GravityNameValue[] nameValues;
-	
+
+	@Override
+	public String toString() {
+		final StringBuilder sb = new StringBuilder("GravityItem{");
+		sb.append("itemId='").append(itemId).append('\'');
+		sb.append(", title='").append(title).append('\'');
+		sb.append(", itemType='").append(itemType).append('\'');
+		sb.append(", hidden=").append(hidden);
+		sb.append(", fromDate=").append(fromDate);
+		sb.append(", toDate=").append(toDate);
+		sb.append(", nameValues=").append(Arrays.toString(nameValues));
+		sb.append('}');
+		return sb.toString();
+	}
 }

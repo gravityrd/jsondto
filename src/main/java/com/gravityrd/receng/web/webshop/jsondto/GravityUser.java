@@ -1,5 +1,7 @@
 package com.gravityrd.receng.web.webshop.jsondto;
 
+import java.util.Arrays;
+
 /**
  * A user in the recommendation system. A user is an entity which generates event, and can get recommendations.
  */
@@ -36,4 +38,13 @@ public class GravityUser {
 	 */
 	public GravityNameValue[] nameValues;
 
+	@Override
+	public String toString() {
+		final StringBuilder sb = new StringBuilder("GravityUser{");
+		sb.append("userId='").append(userId).append('\'');
+		sb.append(", hidden=").append(hidden);
+		sb.append(", nameValues=").append(Arrays.toString(nameValues));
+		sb.append('}');
+		return sb.toString();
+	}
 }

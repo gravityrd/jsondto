@@ -6,7 +6,7 @@ plugins {
 
 group = "com.gravityrd"
 description = """webshop data"""
-version = '1.0.1'
+version = '1.1.0'
 
 compileJava.options.encoding = 'UTF-8'
 sourceCompatibility = 1.7
@@ -37,10 +37,6 @@ task sourcesJar(type: Jar) {
 task javadocJar(type: Jar) {
     classifier = 'javadoc'
     from javadoc
-}
-
-task javadoc(type: Javadoc) {
-  source = sourceSets.main.allJava
 }
 
 artifacts {

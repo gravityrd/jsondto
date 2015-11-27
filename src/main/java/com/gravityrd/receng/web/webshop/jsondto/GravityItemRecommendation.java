@@ -1,7 +1,8 @@
 package com.gravityrd.receng.web.webshop.jsondto;
 
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize.Inclusion;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+import java.util.Arrays;
 
 /**
  * The list of items recommended to a user.
@@ -27,6 +28,18 @@ public class GravityItemRecommendation {
 
 	public double[] predictionValues;
 
-	@JsonSerialize(include = Inclusion.NON_NULL)
+	@JsonInclude(JsonInclude.Include.NON_EMPTY)
 	public GravityNameValue[] outputNameValues;
+
+	@Override
+	public String toString() {
+		final StringBuilder sb = new StringBuilder("GravityItemRecommendation{");
+		sb.append("recommendationId='").append(recommendationId).append('\'');
+		sb.append(", items=").append(Arrays.toString(items));
+		sb.append(", itemIds=").append(Arrays.toString(itemIds));
+		sb.append(", predictionValues=").append(Arrays.toString(predictionValues));
+		sb.append(", outputNameValues=").append(Arrays.toString(outputNameValues));
+		sb.append('}');
+		return sb.toString();
+	}
 }

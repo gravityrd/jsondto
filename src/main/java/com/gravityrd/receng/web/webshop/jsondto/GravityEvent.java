@@ -1,6 +1,8 @@
 package com.gravityrd.receng.web.webshop.jsondto;
 
 
+import java.util.Arrays;
+
 /**
  * An event object describes a user action with an item.
  */
@@ -137,4 +139,17 @@ public class GravityEvent {
 	 */
 	public String recommendationId;
 
+	@Override
+	public String toString() {
+		final StringBuilder sb = new StringBuilder("GravityEvent{");
+		sb.append("itemId='").append(itemId).append('\'');
+		sb.append(", userId='").append(userId).append('\'');
+		sb.append(", cookieId='").append(cookieId).append('\'');
+		sb.append(", time=").append(time);
+		sb.append(", eventType='").append(eventType).append('\'');
+		sb.append(", nameValues=").append(Arrays.toString(nameValues));
+		sb.append(", recommendationId='").append(recommendationId).append('\'');
+		sb.append('}');
+		return sb.toString();
+	}
 }

@@ -1,5 +1,6 @@
 package com.gravityrd.receng.web.webshop.jsondto;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 /**
@@ -56,4 +57,17 @@ public class GravityRecommendationContext {
 	public String[] resultNameValues;
 
 	public HashMap<String, String[]> resultNameValueFilters;
+
+	@Override
+	public String toString() {
+		final StringBuilder sb = new StringBuilder("GravityRecommendationContext{");
+		sb.append("recommendationTime=").append(recommendationTime);
+		sb.append(", numberLimit=").append(numberLimit);
+		sb.append(", scenarioId='").append(scenarioId).append('\'');
+		sb.append(", nameValues=").append(Arrays.toString(nameValues));
+		sb.append(", resultNameValues=").append(Arrays.toString(resultNameValues));
+		sb.append(", resultNameValueFilters=").append(resultNameValueFilters);
+		sb.append('}');
+		return sb.toString();
+	}
 }

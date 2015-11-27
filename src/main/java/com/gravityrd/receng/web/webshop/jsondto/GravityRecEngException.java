@@ -27,4 +27,13 @@ public class GravityRecEngException extends Exception {
 		this.message = message;
 	}
 
+	@SuppressWarnings("Duplicates")
+	@Override
+	public String toString() {
+		final StringBuilder sb = new StringBuilder("GravityRecEngException{");
+		sb.append("faultInfo='").append(faultInfo).append('\'');
+		sb.append(", message='").append(message).append('\'');
+		sb.append('}');
+		return sb.toString();
+	}
 }

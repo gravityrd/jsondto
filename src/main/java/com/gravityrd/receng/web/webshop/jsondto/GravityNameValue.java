@@ -15,4 +15,13 @@ public class GravityNameValue {
 		this.value = value;
 	}
 
+	@SuppressWarnings("Duplicates")
+	@Override
+	public String toString() {
+		final StringBuilder sb = new StringBuilder("GravityNameValue{");
+		sb.append("name='").append(name).append('\'');
+		sb.append(", value='").append(value).append('\'');
+		sb.append('}');
+		return sb.toString();
+	}
 }
