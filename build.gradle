@@ -6,7 +6,7 @@ plugins {
 
 group = "com.gravityrd"
 description = """webshop data"""
-version = '1.1.0'
+version = '1.2.0'
 
 compileJava.options.encoding = 'UTF-8'
 sourceCompatibility = 1.7
@@ -44,6 +44,7 @@ artifacts {
 }
 
 signing {
+    required { gradle.taskGraph.hasTask("uploadArchives") }
     sign configurations.archives
 }
 

@@ -1,8 +1,11 @@
 package com.gravityrd.receng.web.webshop.jsondto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.gravityrd.receng.web.webshop.jsondto.facet.FacetResponse;
 
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Map;
 
 /**
  * The list of items recommended to a user.
@@ -42,4 +45,11 @@ public class GravityItemRecommendation {
 		sb.append('}');
 		return sb.toString();
 	}
+
+	public Map<String, FacetResponse> facets;
+	
+	public Long totalResults;
+	
+	public Long took;
+
 }

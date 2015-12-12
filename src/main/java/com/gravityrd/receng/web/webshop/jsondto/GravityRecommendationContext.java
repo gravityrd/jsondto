@@ -2,6 +2,9 @@ package com.gravityrd.receng.web.webshop.jsondto;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
+
+import com.gravityrd.receng.web.webshop.jsondto.facet.FacetRequest;
 
 /**
  * The context of recommendation.
@@ -57,6 +60,8 @@ public class GravityRecommendationContext {
 	public String[] resultNameValues;
 
 	public HashMap<String, String[]> resultNameValueFilters;
+
+	public List<FacetRequest<?>> facets;
 
 	@Override
 	public String toString() {
