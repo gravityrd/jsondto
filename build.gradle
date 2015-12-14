@@ -15,9 +15,6 @@ tasks.withType(JavaCompile) { options.incremental = true }
 
 
 repositories {
-    maven {
-        url "https://oss.sonatype.org/content/groups/public"
-    }
     mavenCentral()
     jcenter()
 }
@@ -84,6 +81,11 @@ uploadArchives {
                         id 'gravityrd'
                         name 'Gravity R&D'
                         email 'bence.sipos@sgravityrd.com'
+                    }
+                    developer {
+                        id 'bernat'
+                        name 'Gábor Bernát'
+                        email 'gabor.bernat@gravityrd.com'
                     }
                 }
             }
