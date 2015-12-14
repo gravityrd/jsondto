@@ -13,9 +13,6 @@ sourceCompatibility = 1.7
 targetCompatibility = 1.7
 tasks.withType(JavaCompile) { options.incremental = true }
 
-task wrapper(type: Wrapper) {
-    distributionUrl = "http://services.gradle.org/distributions/gradle-2.5-all.zip"
-}
 
 repositories {
     maven {
