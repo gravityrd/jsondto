@@ -1,10 +1,10 @@
 package com.gravityrd.receng.web.webshop.jsondto;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.gravityrd.receng.web.webshop.jsondto.facet.FacetResponse;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Map;
 
 /**
@@ -42,14 +42,20 @@ public class GravityItemRecommendation {
 		sb.append(", itemIds=").append(Arrays.toString(itemIds));
 		sb.append(", predictionValues=").append(Arrays.toString(predictionValues));
 		sb.append(", outputNameValues=").append(Arrays.toString(outputNameValues));
+		sb.append(", facets=").append(facets);
+		sb.append(", totalResults=").append(totalResults);
+		sb.append(", took=").append(took);
 		sb.append('}');
 		return sb.toString();
 	}
 
+	@JsonInclude(content = JsonInclude.Include.NON_NULL)
 	public Map<String, FacetResponse> facets;
-	
+
+	@JsonInclude(content = JsonInclude.Include.NON_NULL)
 	public Long totalResults;
-	
+
+	@JsonInclude(content = JsonInclude.Include.NON_NULL)
 	public Long took;
 
 }
