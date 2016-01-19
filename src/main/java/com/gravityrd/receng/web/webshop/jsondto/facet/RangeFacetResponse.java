@@ -8,9 +8,10 @@ public final class RangeFacetResponse extends FacetResponse {
 	public static final String TYPE = "range";
 
 	public static class RangeBucket {
-		public final Double from;
-		public final Double to;
-		public final long count;
+		public Double from;
+		public Double to;
+		public long count;
+		protected RangeBucket() {}
 		public RangeBucket(Double from, Double to, long count) {
 			super();
 			this.from = from;

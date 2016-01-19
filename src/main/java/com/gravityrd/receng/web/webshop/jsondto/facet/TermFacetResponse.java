@@ -10,8 +10,9 @@ public final class TermFacetResponse extends FacetResponse {
 	public static final String TYPE = "term";
 	
 	public static class TermBucket {
-		public final String term;
-		public final long count;
+		public String term;
+		public long count;
+		protected TermBucket() {}
 		public TermBucket(String term, long count) {
 			super();
 			this.term = term;
