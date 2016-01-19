@@ -21,6 +21,9 @@ public final class TermFacetResponse extends FacetResponse {
 
 	private List<TermBucket> buckets;
 	
+	protected TermFacetResponse() {
+	}
+
 	public TermFacetResponse(List<TermBucket> buckets) {
 		super();
 		this.buckets = buckets;

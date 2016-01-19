@@ -21,6 +21,9 @@ public final class RangeFacetResponse extends FacetResponse {
 	
 	private List<RangeBucket> buckets;
 
+	protected RangeFacetResponse() {
+	}
+
 	public RangeFacetResponse(List<RangeBucket> buckets) {
 		super();
 		this.buckets = buckets;
