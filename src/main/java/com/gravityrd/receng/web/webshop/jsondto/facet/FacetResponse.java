@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
 @JsonSubTypes({
 	@Type(value = TermFacetResponse.class, name=TermFacetResponse.TYPE),
 	@Type(value = RangeFacetResponse.class, name=RangeFacetResponse.TYPE),
+	@Type(value = DynamicRangeFacetResponse.class, name=DynamicRangeFacetResponse.TYPE),
 })
 public abstract class FacetResponse {
 }

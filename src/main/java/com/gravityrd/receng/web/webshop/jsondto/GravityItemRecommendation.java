@@ -1,7 +1,7 @@
 package com.gravityrd.receng.web.webshop.jsondto;
 
 import com.gravityrd.receng.web.webshop.jsondto.facet.FacetResponse;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.Arrays;
@@ -58,4 +58,9 @@ public class GravityItemRecommendation {
 	@JsonInclude(content = JsonInclude.Include.NON_NULL)
 	public Long took;
 
+	@JsonIgnore
+	@SuppressWarnings("unchecked")
+	public <F extends FacetResponse> F getFacet(String name) {
+		return (F) facets.get(name);
+	}
 }

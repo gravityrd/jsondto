@@ -12,6 +12,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
 @JsonSubTypes({
 	@Type(value = TermFacetRequest.class, name="term"),
 	@Type(value = RangeFacetRequest.class, name="range"),
+	@Type(value = DynamicRangeFacetRequest.class, name="dynamic-range"),
 })
 public abstract class FacetRequest<T> {
 	
