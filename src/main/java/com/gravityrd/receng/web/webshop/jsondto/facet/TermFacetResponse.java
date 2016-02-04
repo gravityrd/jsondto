@@ -21,16 +21,28 @@ public final class TermFacetResponse extends FacetResponse {
 	}
 
 	private List<TermBucket> buckets;
+	private long missing;
+	private long other;
 	
 	protected TermFacetResponse() {
 	}
 
-	public TermFacetResponse(List<TermBucket> buckets) {
+	public TermFacetResponse(List<TermBucket> buckets, long missing, long other) {
 		super();
 		this.buckets = buckets;
+		this.missing = missing;
+		this.other = other;
 	}
 
 	public List<TermBucket> getBuckets() {
 		return buckets != null ? Collections.unmodifiableList(buckets) : null;
+	}
+	
+	public long getMissing() {
+		return missing;
+	}
+	
+	public long getOther() {
+		return other;
 	}
 }
