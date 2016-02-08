@@ -49,13 +49,13 @@ public class GravityItemRecommendation {
 		return sb.toString();
 	}
 
-	@JsonInclude(content = JsonInclude.Include.NON_NULL)
+	@JsonInclude(JsonInclude.Include.NON_NULL)
 	public Map<String, FacetResponse> facets;
 
-	@JsonInclude(content = JsonInclude.Include.NON_NULL)
+	@JsonInclude(JsonInclude.Include.NON_NULL)
 	public Long totalResults;
 
-	@JsonInclude(content = JsonInclude.Include.NON_NULL)
+	@JsonInclude(JsonInclude.Include.NON_NULL)
 	public Long took;
 
 	@JsonIgnore

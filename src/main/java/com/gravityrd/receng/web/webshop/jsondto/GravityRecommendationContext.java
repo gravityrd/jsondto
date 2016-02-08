@@ -63,7 +63,7 @@ public class GravityRecommendationContext {
 
 	public HashMap<String, String[]> resultNameValueFilters;
 
-	@JsonInclude(content = JsonInclude.Include.NON_NULL)
+	@JsonInclude(JsonInclude.Include.NON_NULL)
 	public List<FacetRequest<?>> facets;
 
 	@Override
