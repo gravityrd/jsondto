@@ -3,6 +3,8 @@ package com.gravityrd.receng.web.webshop.jsondto.facet;
 import java.util.Collections;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 public class RangeFacetResponse extends FacetResponse {
 
 	public static final String TYPE = "range";
@@ -21,16 +23,23 @@ public class RangeFacetResponse extends FacetResponse {
 	}
 	
 	private List<RangeBucket> buckets;
+	private String label;
 
 	protected RangeFacetResponse() {
 	}
 
-	public RangeFacetResponse(List<RangeBucket> buckets) {
+	public RangeFacetResponse(List<RangeBucket> buckets, String label) {
 		super();
 		this.buckets = buckets;
+		this.label = label;
 	}
 
 	public List<RangeBucket> getBuckets() {
 		return buckets != null ? Collections.unmodifiableList(buckets) : null;
+	}
+	
+	@JsonInclude(JsonInclude.Include.NON_NULL)
+	public String getLabel() {
+		return label;
 	}
 }
