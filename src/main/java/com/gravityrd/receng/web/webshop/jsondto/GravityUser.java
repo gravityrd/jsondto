@@ -1,10 +1,16 @@
 package com.gravityrd.receng.web.webshop.jsondto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.util.Arrays;
 
 /**
  * A user in the recommendation system. A user is an entity which generates event, and can get recommendations.
  */
+@SuppressWarnings({ "unused", "WeakerAccess" })
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class GravityUser {
 
 	/**
@@ -21,7 +27,7 @@ public class GravityUser {
 	/**
 	 *
 	 * NameValues provide additional description of the user.
-     * There can multiple NameValues with the same name.
+	 * There can multiple NameValues with the same name.
 	 * The order of NameValues will not be preserved.
 	 *
 	 * The recommendation engine in most cases does not require detailed information about the users, usually only some basic information can be used to enhance the quality of recommendation.
@@ -40,11 +46,9 @@ public class GravityUser {
 
 	@Override
 	public String toString() {
-		final StringBuilder sb = new StringBuilder("GravityUser{");
-		sb.append("userId='").append(userId).append('\'');
-		sb.append(", hidden=").append(hidden);
-		sb.append(", nameValues=").append(Arrays.toString(nameValues));
-		sb.append('}');
-		return sb.toString();
+		return "GravityUser{" + "userId='" + userId + '\'' +
+				", hidden=" + hidden +
+				", nameValues=" + Arrays.toString(nameValues) +
+				'}';
 	}
 }

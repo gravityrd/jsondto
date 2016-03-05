@@ -1,10 +1,16 @@
 package com.gravityrd.receng.web.webshop.jsondto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.util.Arrays;
 
 /**
  * An item is something that can be recommended to users.
  */
+@SuppressWarnings("WeakerAccess")
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class GravityItem {
 
 	/**
@@ -55,7 +61,7 @@ public class GravityItem {
 	 *
 	 * The NameValues for the item.
 	 * <p>NameValues provide additional description of the item.</p>
-     * <p>There can multiple NameValues with the same name.</p>
+	 * <p>There can multiple NameValues with the same name.</p>
 	 * <p>The order of NameValues among different names will not be preserved, but the order of the values for the same name will be preserved.</p>
 	 * <p>The recommendation engine can be configured to use some properties to create a relation between items.</p>
 	 * <p>A possible list of names:</p>
@@ -85,15 +91,13 @@ public class GravityItem {
 
 	@Override
 	public String toString() {
-		final StringBuilder sb = new StringBuilder("GravityItem{");
-		sb.append("itemId='").append(itemId).append('\'');
-		sb.append(", title='").append(title).append('\'');
-		sb.append(", itemType='").append(itemType).append('\'');
-		sb.append(", hidden=").append(hidden);
-		sb.append(", fromDate=").append(fromDate);
-		sb.append(", toDate=").append(toDate);
-		sb.append(", nameValues=").append(Arrays.toString(nameValues));
-		sb.append('}');
-		return sb.toString();
+		return "GravityItem{" + "itemId='" + itemId + '\'' +
+				", title='" + title + '\'' +
+				", itemType='" + itemType + '\'' +
+				", hidden=" + hidden +
+				", fromDate=" + fromDate +
+				", toDate=" + toDate +
+				", nameValues=" + Arrays.toString(nameValues) +
+				'}';
 	}
 }

@@ -1,15 +1,20 @@
 package com.gravityrd.receng.web.webshop.jsondto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 /**
  * Holds information about the gravity recommendation request scenario.
  */
+@SuppressWarnings({ "unused", "WeakerAccess" })
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class GravityScenario {
 
 	/**
 	 * Holds an internal number identification.
 	 */
 	public int id;
-
 
 	/**
 	 * An unique id usable when interacting with the API.
@@ -46,7 +51,7 @@ public class GravityScenario {
 	 */
 	public String modifierName;
 
-	public GravityScenario(){}
+	public GravityScenario() {}
 
 	/**
 	 * Returns a string representation of the object. In general, the toString method returns a string that "textually represents" this object.
@@ -54,16 +59,14 @@ public class GravityScenario {
 	 */
 	@Override
 	public String toString() {
-		final StringBuilder sb = new StringBuilder("GravityScenario{");
-		sb.append("id=").append(id);
-		sb.append(", apiName='").append(apiName).append('\'');
-		sb.append(", humanReadableName='").append(humanReadableName).append('\'');
-		sb.append(", description='").append(description).append('\'');
-		sb.append(", order=").append(order);
-		sb.append(", numberLimit=").append(numberLimit);
-		sb.append(", type='").append(type).append('\'');
-		sb.append(", modifierName='").append(modifierName).append('\'');
-		sb.append('}');
-		return sb.toString();
+		return "GravityScenario{" + "id=" + id +
+				", apiName='" + apiName + '\'' +
+				", humanReadableName='" + humanReadableName + '\'' +
+				", description='" + description + '\'' +
+				", order=" + order +
+				", numberLimit=" + numberLimit +
+				", type='" + type + '\'' +
+				", modifierName='" + modifierName + '\'' +
+				'}';
 	}
 }

@@ -1,11 +1,16 @@
 package com.gravityrd.receng.web.webshop.jsondto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.Arrays;
 
 /**
  * An event object describes a user action with an item.
  */
+@SuppressWarnings("WeakerAccess")
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class GravityEvent {
 
 	/**
@@ -14,8 +19,8 @@ public class GravityEvent {
 	public String itemId;
 
 	/**
-     * The identifier of the user who generated the event.
-     */
+	 * The identifier of the user who generated the event.
+	 */
 	public String userId;
 
 	/**
@@ -31,7 +36,7 @@ public class GravityEvent {
 	 * The UNIX timestamp of the event, in seconds.
 	 * The default value is the current timestamp.
 	 */
-	public int time = (int)(System.currentTimeMillis() / 1000);
+	public int time = (int) (System.currentTimeMillis() / 1000);
 
 	/**
 	 *
@@ -141,15 +146,13 @@ public class GravityEvent {
 
 	@Override
 	public String toString() {
-		final StringBuilder sb = new StringBuilder("GravityEvent{");
-		sb.append("itemId='").append(itemId).append('\'');
-		sb.append(", userId='").append(userId).append('\'');
-		sb.append(", cookieId='").append(cookieId).append('\'');
-		sb.append(", time=").append(time);
-		sb.append(", eventType='").append(eventType).append('\'');
-		sb.append(", nameValues=").append(Arrays.toString(nameValues));
-		sb.append(", recommendationId='").append(recommendationId).append('\'');
-		sb.append('}');
-		return sb.toString();
+		return "GravityEvent{" + "itemId='" + itemId + '\'' +
+				", userId='" + userId + '\'' +
+				", cookieId='" + cookieId + '\'' +
+				", time=" + time +
+				", eventType='" + eventType + '\'' +
+				", nameValues=" + Arrays.toString(nameValues) +
+				", recommendationId='" + recommendationId + '\'' +
+				'}';
 	}
 }

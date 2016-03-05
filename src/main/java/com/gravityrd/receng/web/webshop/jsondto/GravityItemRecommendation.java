@@ -1,7 +1,9 @@
 package com.gravityrd.receng.web.webshop.jsondto;
 
 import com.gravityrd.receng.web.webshop.jsondto.facet.FacetResponse;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.Arrays;
@@ -10,6 +12,9 @@ import java.util.Map;
 /**
  * The list of items recommended to a user.
  */
+@SuppressWarnings({ "WeakerAccess", "unused" })
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class GravityItemRecommendation {
 
 	/**
@@ -31,32 +36,22 @@ public class GravityItemRecommendation {
 
 	public double[] predictionValues;
 
-	@JsonInclude(JsonInclude.Include.NON_EMPTY)
 	public GravityNameValue[] outputNameValues;
-
-	@Override
-	public String toString() {
-		final StringBuilder sb = new StringBuilder("GravityItemRecommendation{");
-		sb.append("recommendationId='").append(recommendationId).append('\'');
-		sb.append(", items=").append(Arrays.toString(items));
-		sb.append(", itemIds=").append(Arrays.toString(itemIds));
-		sb.append(", predictionValues=").append(Arrays.toString(predictionValues));
-		sb.append(", outputNameValues=").append(Arrays.toString(outputNameValues));
-		sb.append(", facets=").append(facets);
-		sb.append(", totalResults=").append(totalResults);
-		sb.append(", took=").append(took);
-		sb.append('}');
-		return sb.toString();
-	}
-
-	@JsonInclude(JsonInclude.Include.NON_NULL)
 	public Map<String, FacetResponse> facets;
-
-	@JsonInclude(JsonInclude.Include.NON_NULL)
 	public Long totalResults;
-
-	@JsonInclude(JsonInclude.Include.NON_NULL)
 	public Long took;
+
+	public String toString() {
+		return "GravityItemRecommendation{" + "recommendationId='" + recommendationId + '\'' +
+				", items=" + Arrays.toString(items) +
+				", itemIds=" + Arrays.toString(itemIds) +
+				", predictionValues=" + Arrays.toString(predictionValues) +
+				", outputNameValues=" + Arrays.toString(outputNameValues) +
+				", facets=" + facets +
+				", totalResults=" + totalResults +
+				", took=" + took +
+				'}';
+	}
 
 	@JsonIgnore
 	@SuppressWarnings("unchecked")

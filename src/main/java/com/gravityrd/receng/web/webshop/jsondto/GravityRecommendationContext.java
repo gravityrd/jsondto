@@ -1,5 +1,6 @@
 package com.gravityrd.receng.web.webshop.jsondto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.gravityrd.receng.web.webshop.jsondto.facet.FacetRequest;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -11,6 +12,9 @@ import java.util.List;
 /**
  * The context of recommendation.
  */
+@SuppressWarnings("WeakerAccess")
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class GravityRecommendationContext {
 
 	/**
@@ -63,20 +67,17 @@ public class GravityRecommendationContext {
 
 	public HashMap<String, String[]> resultNameValueFilters;
 
-	@JsonInclude(JsonInclude.Include.NON_NULL)
 	public List<FacetRequest<?>> facets;
 
 	@Override
 	public String toString() {
-		final StringBuilder sb = new StringBuilder("GravityRecommendationContext{");
-		sb.append("recommendationTime=").append(recommendationTime);
-		sb.append(", numberLimit=").append(numberLimit);
-		sb.append(", scenarioId='").append(scenarioId).append('\'');
-		sb.append(", nameValues=").append(Arrays.toString(nameValues));
-		sb.append(", resultNameValues=").append(Arrays.toString(resultNameValues));
-		sb.append(", resultNameValueFilters=").append(resultNameValueFilters);
-		sb.append(", facets=").append(facets);
-		sb.append('}');
-		return sb.toString();
+		return "GravityRecommendationContext{" + "recommendationTime=" + recommendationTime +
+				", numberLimit=" + numberLimit +
+				", scenarioId='" + scenarioId + '\'' +
+				", nameValues=" + Arrays.toString(nameValues) +
+				", resultNameValues=" + Arrays.toString(resultNameValues) +
+				", resultNameValueFilters=" + resultNameValueFilters +
+				", facets=" + facets +
+				'}';
 	}
 }

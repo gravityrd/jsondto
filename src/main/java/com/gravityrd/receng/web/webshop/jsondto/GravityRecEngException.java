@@ -1,6 +1,9 @@
 package com.gravityrd.receng.web.webshop.jsondto;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
@@ -11,29 +14,42 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * <p>It can also indicate an internal error in the recommendation engine, in this case the details of the error can be found in the log files of the recommendation engine.</p>
  * <p>The message of the exception contains a human readable description of the problem.</p>
  */
+@SuppressWarnings({ "unused", "WeakerAccess" })
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class GravityRecEngException extends Exception {
+
 	@JsonProperty("faultInfo")
 	public String faultInfo;
-	@JsonProperty("message")
-	public String message;
 
-	public GravityRecEngException() {
-	}
+	public GravityRecEngException() {}
 
 	@JsonCreator
 	public GravityRecEngException(@JsonProperty("message") String message, @JsonProperty("faultInfo") String faultInfo) {
-		super(faultInfo + " : " + message);
+		super(message);
 		this.faultInfo = faultInfo;
-		this.message = message;
 	}
 
-	@SuppressWarnings("Duplicates")
+	@JsonIgnore
+	@Override
+	public String getLocalizedMessage() {
+		return super.getLocalizedMessage();
+	}
+
+	@JsonIgnore
+	@Override
+	public synchronized Throwable getCause() {
+		return super.getCause();
+	}
+
 	@Override
 	public String toString() {
-		final StringBuilder sb = new StringBuilder("GravityRecEngException{");
-		sb.append("faultInfo='").append(faultInfo).append('\'');
-		sb.append(", message='").append(message).append('\'');
-		sb.append('}');
-		return sb.toString();
+		return "GravityRecEngException{" + "message='" + getMessage() + '\'' + ", faultInfo='" + faultInfo + '\'' + '}';
+	}
+
+	@JsonIgnore
+	@Override
+	public StackTraceElement[] getStackTrace() {
+		return super.getStackTrace();
 	}
 }
