@@ -1,8 +1,8 @@
 package com.gravityrd.receng.web.webshop.jsondto;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.gravityrd.receng.web.webshop.jsondto.facet.FacetRequest;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.Arrays;
@@ -64,8 +64,10 @@ public class GravityRecommendationContext {
 	 */
 	public String[] resultNameValues;
 
+	@JsonInclude(JsonInclude.Include.NON_EMPTY)
 	public HashMap<String, String[]> resultNameValueFilters;
 
+	@JsonInclude(JsonInclude.Include.NON_EMPTY)
 	public List<FacetRequest<?>> facets;
 
 	@Override
