@@ -9,7 +9,6 @@ import java.util.Arrays;
  * An event object describes a user action with an item.
  */
 @SuppressWarnings("WeakerAccess")
-@JsonInclude(JsonInclude.Include.NON_EMPTY)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GravityEvent {
 

@@ -13,7 +13,6 @@ import java.util.List;
  * The context of recommendation.
  */
 @SuppressWarnings("WeakerAccess")
-@JsonInclude(JsonInclude.Include.NON_EMPTY)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GravityRecommendationContext {
 

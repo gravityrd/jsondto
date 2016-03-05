@@ -13,7 +13,6 @@ import java.util.Map;
  * The list of items recommended to a user.
  */
 @SuppressWarnings({ "WeakerAccess", "unused" })
-@JsonInclude(JsonInclude.Include.NON_EMPTY)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GravityItemRecommendation {
 
@@ -37,8 +36,12 @@ public class GravityItemRecommendation {
 	public double[] predictionValues;
 
 	public GravityNameValue[] outputNameValues;
+
+	@JsonInclude(JsonInclude.Include.NON_EMPTY)
 	public Map<String, FacetResponse> facets;
+	@JsonInclude(JsonInclude.Include.NON_EMPTY)
 	public Long totalResults;
+	@JsonInclude(JsonInclude.Include.NON_EMPTY)
 	public Long took;
 
 	public String toString() {

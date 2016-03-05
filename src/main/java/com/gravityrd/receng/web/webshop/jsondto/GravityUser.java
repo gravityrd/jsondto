@@ -9,7 +9,6 @@ import java.util.Arrays;
  * A user in the recommendation system. A user is an entity which generates event, and can get recommendations.
  */
 @SuppressWarnings({ "unused", "WeakerAccess" })
-@JsonInclude(JsonInclude.Include.NON_EMPTY)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GravityUser {
 

@@ -7,7 +7,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  * A name and a value. This can be used to provide information about items, users and events.
  */
 @SuppressWarnings({ "WeakerAccess", "unused" })
-@JsonInclude(JsonInclude.Include.NON_EMPTY)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GravityNameValue {
 	public String name;

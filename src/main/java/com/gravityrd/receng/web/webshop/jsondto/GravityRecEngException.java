@@ -3,7 +3,6 @@ package com.gravityrd.receng.web.webshop.jsondto;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
@@ -15,7 +14,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * <p>The message of the exception contains a human readable description of the problem.</p>
  */
 @SuppressWarnings({ "unused", "WeakerAccess" })
-@JsonInclude(JsonInclude.Include.NON_EMPTY)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GravityRecEngException extends Exception {
 

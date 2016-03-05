@@ -9,7 +9,6 @@ import java.util.Arrays;
  * An item is something that can be recommended to users.
  */
 @SuppressWarnings("WeakerAccess")
-@JsonInclude(JsonInclude.Include.NON_EMPTY)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GravityItem {
 

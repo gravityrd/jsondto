@@ -11,3 +11,4 @@ public final class DynamicRangeFacetResponse extends RangeFacetResponse {
 	public static final String TYPE = "dynamic-range";
 
 }
+
