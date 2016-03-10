@@ -72,13 +72,15 @@ public class GravityRecommendationContext {
 
 	@Override
 	public String toString() {
-		return "GravityRecommendationContext{" + "recommendationTime=" + recommendationTime +
-				", numberLimit=" + numberLimit +
-				", scenarioId='" + scenarioId + '\'' +
-				", nameValues=" + Arrays.toString(nameValues) +
-				", resultNameValues=" + Arrays.toString(resultNameValues) +
-				", resultNameValueFilters=" + resultNameValueFilters +
-				", facets=" + facets +
-				'}';
+		final StringBuilder sb = new StringBuilder("GravityRecommendationContext{");
+		sb.append("recommendationTime=").append(recommendationTime);
+		sb.append(", numberLimit=").append(numberLimit);
+		if (scenarioId != null) sb.append(", scenarioId='").append(scenarioId).append('\'');
+		if (nameValues != null && nameValues.length > 0) sb.append(", nameValues=").append(Arrays.toString(nameValues));
+		if (resultNameValues != null && resultNameValues.length > 0) sb.append(", resultNameValues=").append(Arrays.toString(resultNameValues));
+		if (resultNameValueFilters != null && !resultNameValueFilters.isEmpty()) sb.append(", resultNameValueFilters=").append(resultNameValueFilters);
+		if (facets != null && !facets.isEmpty()) sb.append(", facets=").append(facets);
+		sb.append('}');
+		return sb.toString();
 	}
 }

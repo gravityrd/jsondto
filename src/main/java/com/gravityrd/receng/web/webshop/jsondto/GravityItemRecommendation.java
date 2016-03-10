@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -33,27 +34,47 @@ public class GravityItemRecommendation {
 	 */
 	public String[] itemIds;
 
+	/**
+	 * The prediction values of the recommended items.
+	 */
 	public double[] predictionValues;
 
+	/**
+	 * Requested meta information for the recommended items.
+	 */
 	public GravityNameValue[] outputNameValues;
 
+	/**
+	 * Facet information for the recommendation request.
+	 */
 	@JsonInclude(JsonInclude.Include.NON_EMPTY)
 	public Map<String, FacetResponse> facets;
+
+	/**
+	 * How many recommendations were in the facet set.
+	 */
 	@JsonInclude(JsonInclude.Include.NON_EMPTY)
 	public Long totalResults;
+
+	/**
+	 * Gravity server side recommendation time.
+	 */
 	@JsonInclude(JsonInclude.Include.NON_EMPTY)
 	public Long took;
 
+	@Override
 	public String toString() {
-		return "GravityItemRecommendation{" + "recommendationId='" + recommendationId + '\'' +
-				", items=" + Arrays.toString(items) +
-				", itemIds=" + Arrays.toString(itemIds) +
-				", predictionValues=" + Arrays.toString(predictionValues) +
-				", outputNameValues=" + Arrays.toString(outputNameValues) +
-				", facets=" + facets +
-				", totalResults=" + totalResults +
-				", took=" + took +
-				'}';
+		final StringBuilder sb = new StringBuilder("GravityItemRecommendation{");
+		sb.append("recommendationId='").append(recommendationId).append('\'');
+		if (items != null && items.length > 0) sb.append(", items=").append(Arrays.toString(items));
+		if (itemIds != null && itemIds.length > 0) sb.append(", itemIds=").append(Arrays.toString(itemIds));
+		if (predictionValues != null && predictionValues.length > 0) sb.append(", predictionValues=").append(Arrays.toString(predictionValues));
+		if (outputNameValues != null && outputNameValues.length > 0) sb.append(", outputNameValues=").append(Arrays.toString(outputNameValues));
+		if (facets != null && !facets.isEmpty()) sb.append(", facets=").append(facets);
+		if (totalResults != null) sb.append(", totalResults=").append(totalResults);
+		if (took != null) sb.append(", took=").append(took);
+		sb.append('}');
+		return sb.toString();
 	}
 
 	@JsonIgnore
