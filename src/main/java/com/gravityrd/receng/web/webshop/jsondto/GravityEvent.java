@@ -1,7 +1,6 @@
 package com.gravityrd.receng.web.webshop.jsondto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.Arrays;
 

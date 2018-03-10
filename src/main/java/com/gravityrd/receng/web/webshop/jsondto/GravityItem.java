@@ -1,7 +1,6 @@
 package com.gravityrd.receng.web.webshop.jsondto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.Arrays;
 
@@ -40,7 +39,7 @@ public class GravityItem {
 	 *  A hidden item will be never recommended.
 	 *  The default value is false.
 	 */
-	public boolean hidden = false;
+	public Boolean hidden;
 
 	/**
 	 * An item is never recommended before this date.

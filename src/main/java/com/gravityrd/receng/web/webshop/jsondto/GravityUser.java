@@ -1,7 +1,6 @@
 package com.gravityrd.receng.web.webshop.jsondto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.Arrays;
 
@@ -21,7 +20,7 @@ public class GravityUser {
 	 * A no more existing user should be set to hidden.
 	 * The default value is false.
 	 */
-	public boolean hidden = false;
+	public Boolean hidden;
 
 	/**
 	 *
