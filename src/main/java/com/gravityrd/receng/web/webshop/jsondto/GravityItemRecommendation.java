@@ -5,6 +5,7 @@ import com.gravityrd.receng.web.webshop.jsondto.facet.FacetResponse;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.JsonNode;
 
 import java.util.Arrays;
 import java.util.Map;
@@ -56,6 +57,12 @@ public class GravityItemRecommendation {
 	public Long totalResults;
 
 	/**
+	 * Aggregation information for the recommendation request.
+	 */
+	@JsonInclude(JsonInclude.Include.NON_EMPTY)
+	public Map<String, JsonNode> elasticAggregations;
+
+	/**
 	 * Gravity server side recommendation time.
 	 */
 	@JsonInclude(JsonInclude.Include.NON_EMPTY)
@@ -71,6 +78,7 @@ public class GravityItemRecommendation {
 		if (outputNameValues != null && outputNameValues.length > 0) sb.append(", outputNameValues=").append(Arrays.toString(outputNameValues));
 		if (facets != null && !facets.isEmpty()) sb.append(", facets=").append(facets);
 		if (totalResults != null) sb.append(", totalResults=").append(totalResults);
+		if (elasticAggregations != null && !elasticAggregations.isEmpty()) sb.append(", elasticAggregations=").append(elasticAggregations);
 		if (took != null) sb.append(", took=").append(took);
 		sb.append('}');
 		return sb.toString();
